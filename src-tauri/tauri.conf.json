@@ -6,7 +6,7 @@
   "build": {
     "distDir": "../dist",
     "devPath": "http://localhost:3330",
-    "beforeDevCommand": "yarn dev",
+    "beforeDevCommand": "yarn web:dev",
     "beforeBuildCommand": ""
   },
   "tauri": {
@@ -53,11 +53,20 @@
     },
     "windows": [
       {
-        "title": "fmgy",
-        "width": 800,
-        "height": 600,
+        "title": "favorites manga",
+        "width": 1300,
+        "height": 910,
         "resizable": true,
-        "fullscreen": false
+        "fullscreen": false,
+        "visible": false
+      },
+      {
+        "title": "welcome",
+        "width": 1300,
+        "height": 910,
+        "resizable": false,
+        "url": "/splash",
+        "label": "splashscreen"
       }
     ],
     "security": {
