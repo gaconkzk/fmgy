@@ -16,9 +16,10 @@ export default defineConfig({
   server: {
     port: 3330,
   },
-  plugins: [
-    windicss(),
-    svelte(),
-    mpa({ open: false }),
-  ]
+  resolve: {
+    alias: {
+      '@fmgy': resolve(__dirname, './src'),
+    },
+  },
+  plugins: [windicss(), svelte(), mpa({ open: false })],
 })

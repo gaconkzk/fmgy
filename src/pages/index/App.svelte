@@ -1,65 +1,30 @@
 <script lang="ts">
-  import logo from '../../assets/svelte.png'
-  import Counter from '../../lib/Counter.svelte'
+  import Button from '@fmgy/components/atoms/Button.svelte'
+  import FlexContainer from '@fmgy/components/FlexContainer.svelte'
 </script>
 
-<main>
-  <img src={logo} alt="Svelte Logo" class="mx-auto"/>
-  <h1>Hello Typescript!</h1>
-
-  <Counter />
-
-  <p>
-    Visit <a href="https://svelte.dev">svelte.dev</a> to learn how to build Svelte
-    apps.
-  </p>
-
-  <p>
-    Check out <a href="https://github.com/sveltejs/kit#readme">SvelteKit</a> for
-    the officially supported framework, also powered by Vite!
-  </p>
-</main>
-
-<style>
-  :root {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-      Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  }
-
-  main {
-    text-align: center;
-    padding: 1em;
-    margin: 0 auto;
-  }
-
-  img {
-    height: 16rem;
-    width: 16rem;
-  }
-
-  h1 {
-    color: #ff3e00;
-    text-transform: uppercase;
-    font-size: 4rem;
-    font-weight: 100;
-    line-height: 1.1;
-    margin: 2rem auto;
-    max-width: 14rem;
-  }
-
-  p {
-    max-width: 14rem;
-    margin: 1rem auto;
-    line-height: 1.35;
-  }
-
-  @media (min-width: 480px) {
-    h1 {
-      max-width: none;
-    }
-
-    p {
-      max-width: none;
-    }
+<style lang="scss">
+  :global(#app) {
+    @apply bg-gray-700 text-light-200;
   }
 </style>
+
+<navbar>
+</navbar>
+<FlexContainer col class="p-2">
+  <h1>Components</h1>
+  <FlexContainer col>
+    <h3>Buttons</h3>
+    <FlexContainer class="pt-2 gap-4">
+      <Button outline>Outlined</Button>
+      <Button primary>Primary</Button>
+      <Button secondary>Secondary</Button>
+      <Button warning>Warning</Button>
+      <Button danger>Danger</Button>
+    </FlexContainer>
+    <h3>Input</h3>
+    <FlexContainer class="pt-2 gap-4">
+      <input type="text" class="bg-dark-500 text-light-500 rounded focus:(outline-none ring-transparent border-current)"/>
+    </FlexContainer>
+  </FlexContainer>
+</FlexContainer>
