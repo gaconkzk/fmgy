@@ -1,10 +1,9 @@
 import 'virtual:windi.css'
-import '../../styles/global.scss'
-
 import App from './App.svelte'
+import '@gaconkzk/flyui-svelte/css'
 
 const app = new App({
-  target: document.getElementById('app')
+  target: document.getElementById('app'),
 })
 
 export default app

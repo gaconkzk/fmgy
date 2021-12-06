@@ -7,8 +7,6 @@
   export let flex: string | number = '1'
   let inClass = ''
   export { inClass as class }
-
-  $: classes = calculateClass(col, flex)
 </script>
 
 <style lang="scss">
