@@ -1,7 +1,7 @@
 lockfileVersion: 5.3
 
 specifiers:
-  '@gaconkzk/flyui-svelte': ^0.1.4
+  '@gaconkzk/flyui-svelte': ^0.1.6
   '@sveltejs/vite-plugin-svelte': ^1.0.0-next.30
   '@tauri-apps/api': ^1.0.0-beta.8
   '@tauri-apps/cli': ^1.0.0-beta.10
@@ -24,7 +24,7 @@ dependencies:
   '@tauri-apps/api': 1.0.0-beta.8
 
 devDependencies:
-  '@gaconkzk/flyui-svelte': 0.1.4_svelte@3.39.0
+  '@gaconkzk/flyui-svelte': 0.1.6_svelte@3.39.0
   '@sveltejs/vite-plugin-svelte': 1.0.0-next.30_svelte@3.39.0+vite@2.6.14
   '@tauri-apps/cli': 1.0.0-beta.10
   '@tsconfig/svelte': 2.0.1
@@ -69,8 +69,8 @@ packages:
       to-fast-properties: 2.0.0
     dev: true
 
-  /@gaconkzk/flyui-svelte/0.1.4_svelte@3.39.0:
-    resolution: {integrity: sha512-BQDGyR7TG7mRiotEnvIoZh1ZPD9Mz7Sh9JWPLQDl+5iLW0dhppQHKwfeub3PCeFycEli/xgLgb63mPZs9KrBsQ==}
+  /@gaconkzk/flyui-svelte/0.1.6_svelte@3.39.0:
+    resolution: {integrity: sha512-BXRIWIiEucG2UluSwy/foERDPAOgt2DsEtNkOMODTBGHAOyEWSZrH56pTjCHetU6g1n0VsfkO1b4SqbvCfnM6A==}
     peerDependencies:
       svelte: ^3.39.0
     dependencies:
