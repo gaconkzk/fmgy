@@ -2,7 +2,7 @@
   import { FButton, FIcon, scrollable } from '@gaconkzk/flyui-svelte'
 </script>
 
-<div data-tauri-drag-region class="titlebar flat">
+<div data-tauri-drag-region class="titlebar">
   <div class="titlebar-button" id="titlebar-minimize">
     <img
       src="https://api.iconify.design/mdi:window-minimize.svg"
@@ -20,7 +20,10 @@
   </div>
 </div>
 
-<div v-scrollable="scrollable" class="h-screen">
+<div
+  v-scrollable="scrollable"
+  class="h-full my-30px bg-$f-primary rounded-b-2xl"
+>
   <div>
     <section>
       <h5>Theme</h5>
@@ -84,10 +87,6 @@
 </div>
 
 <style lang="scss">
-  :global(#app) {
-    @apply bg-gray-700 text-light-200;
-  }
-
   .titlebar {
     height: 30px;
     background: var(--f-primary);
@@ -98,7 +97,11 @@
     top: 0;
     left: 0;
     right: 0;
+    border-radius: 0;
+    border-top-left-radius: 1em;
+    border-top-right-radius: 1em;
   }
+
   .titlebar-button {
     display: inline-flex;
     justify-content: center;
@@ -106,6 +109,7 @@
     width: 30px;
     height: 30px;
   }
+
   .titlebar-button:hover {
     background: #5bbec3;
   }

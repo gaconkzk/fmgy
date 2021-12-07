@@ -58,7 +58,10 @@
         "height": 910,
         "resizable": true,
         "fullscreen": false,
-        "visible": false
+        "visible": false,
+        "center": true,
+        "transparent": true,
+        "decorations": false
       },
       {
         "title": "welcome",
