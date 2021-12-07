@@ -6,8 +6,8 @@
   "build": {
     "distDir": "../dist",
     "devPath": "http://localhost:3330",
-    "beforeDevCommand": "yarn web:dev",
-    "beforeBuildCommand": ""
+    "beforeDevCommand": "pnpm run web:dev",
+    "beforeBuildCommand": "pnpm run web:build"
   },
   "tauri": {
     "bundle": {
@@ -54,9 +54,10 @@
     "windows": [
       {
         "title": "favorites manga",
-        "width": 1300,
-        "height": 910,
+        "width": 1024,
+        "height": 720,
         "resizable": true,
+        "url": "/index",
         "fullscreen": false,
         "visible": false,
         "center": true,
@@ -65,11 +66,13 @@
       },
       {
         "title": "welcome",
-        "width": 1300,
-        "height": 910,
+        "width": 600,
+        "height": 400,
         "resizable": false,
         "url": "/splash",
-        "label": "splashscreen"
+        "label": "splashscreen",
+        "center": true,
+        "decorations": false
       }
     ],
     "security": {

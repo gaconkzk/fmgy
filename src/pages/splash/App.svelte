@@ -3,7 +3,7 @@
 </script>
 
 <main>
-  <img src={logo} alt="Svelte Logo" class="mx-auto"/>
+  <img src={logo} alt="Svelte Logo" class="mx-auto" />
   <h1>Splash screen</h1>
 </main>
 
@@ -42,10 +42,6 @@
 
   @media (min-width: 480px) {
     h1 {
-      max-width: none;
-    }
-
-    p {
       max-width: none;
     }
   }
