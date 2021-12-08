@@ -3,6 +3,14 @@
   windows_subsystem = "windows"
 )]
 use tauri::{CustomMenuItem, Manager, Menu, MenuItem, Submenu};
+
+// the payload type must implement `Serialize`.
+// for global events, it also must implement `Clone`.
+#[derive(Clone, serde::Serialize)]
+struct Payload {
+  message: String,
+}
+
 fn main() {
   // // here `"quit".to_string()` defines the menu item id, and the second parameter is the menu item label.
   // let quit = CustomMenuItem::new("quit".to_string(), "Quit");
@@ -18,15 +26,9 @@ fn main() {
       let splash = app.get_window("splashscreen").unwrap();
       let main_window = app.get_window("main").unwrap();
 
-      tauri::async_runtime::spawn(async move {
-        // initialize here instead of sleep
-        println!("Initializing...");
-        std::thread::sleep(std::time::Duration::from_secs(2));
-        println!("Done initializing.");
-
-        // After loading close splash and display main window
+      let continueClicked = app.listen_global("splash-continue", move |event| {
         splash.close().unwrap();
-        main_window.show()
+        main_window.show();
       });
 
       Ok(())

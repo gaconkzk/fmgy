@@ -1,10 +1,13 @@
 <script lang="ts">
   import logo from '../../assets/svelte.png'
+  import { emit, listen } from '@tauri-apps/api/event'
+  import { getCurrent, WebviewWindow } from '@tauri-apps/api/window'
 </script>
 
 <main>
   <img src={logo} alt="Svelte Logo" class="mx-auto" />
   <h1>Splash screen</h1>
+  <button on:click={() => emit('splash-continue')}>Continue</button>
 </main>
 
 <style>
@@ -32,12 +35,6 @@
     line-height: 1.1;
     margin: 2rem auto;
     max-width: 14rem;
-  }
-
-  p {
-    max-width: 14rem;
-    margin: 1rem auto;
-    line-height: 1.35;
   }
 
   @media (min-width: 480px) {
