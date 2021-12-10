@@ -3,6 +3,7 @@ import formsPlugin from 'windicss/plugin/forms'
 
 export default defineConfig({
   darkMode: 'class',
+  attributify: true,
   safelist: 'p-3 p-4 p-5',
   theme: {
     extend: {},

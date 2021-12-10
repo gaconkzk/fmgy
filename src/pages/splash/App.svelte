@@ -1,13 +1,18 @@
 <script lang="ts">
   import logo from '../../assets/svelte.png'
-  import { emit, listen } from '@tauri-apps/api/event'
-  import { getCurrent, WebviewWindow } from '@tauri-apps/api/window'
+  import { emit } from '@tauri-apps/api/event'
+  import { FButton } from '@gaconkzk/flyui-svelte'
+
+  const continueClicked = (e) => {
+    console.log('clicked', e)
+    emit('splash-continue')
+  }
 </script>
 
-<main>
+<main class="inset h-full">
   <img src={logo} alt="Svelte Logo" class="mx-auto" />
   <h1>Splash screen</h1>
-  <button on:click={() => emit('splash-continue')}>Continue</button>
+  <FButton on:click={continueClicked}>Continue</FButton>
 </main>
 
 <style>
@@ -17,6 +22,7 @@
   }
 
   main {
+    @apply bg-$f-primary rounded-3xl;
     text-align: center;
     padding: 1em;
     margin: 0 auto;

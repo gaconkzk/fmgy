@@ -5,9 +5,8 @@ import windicss from 'vite-plugin-windicss'
 import mpaModule from 'vite-plugin-mpa'
 const mpa = mpaModule.default
 
-import { resolve } from 'path'
-
-const __dirname = resolve()
+import path from 'path'
+const dirname = path.resolve()
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -17,14 +16,14 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
-        main: resolve(__dirname, 'src/pages/index', 'index.html'),
-        splash: resolve(__dirname, 'src/pages/splash', 'index.html'),
+        main: path.resolve(dirname, 'src/pages/index', 'index.html'),
+        splash: path.resolve(dirname, 'src/pages/splash', 'index.html'),
       },
     },
   },
   resolve: {
     alias: {
-      '@fmgy': resolve(__dirname, './src'),
+      '@fmgy': path.resolve(dirname, './src'),
     },
   },
   plugins: [windicss(), svelte(), mpa({ open: false })],
