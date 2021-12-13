@@ -1,7 +1,7 @@
 <script lang="ts">
   import logo from '../../assets/svelte.png'
   import { emit } from '@tauri-apps/api/event'
-  import { FButton } from '@gaconkzk/flyui-svelte'
+  import FButton from '@gaconkzk/flyui-svelte/components/FButton.svelte'
 
   const continueClicked = (e) => {
     console.log('clicked', e)
