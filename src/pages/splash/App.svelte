@@ -9,7 +9,7 @@
   }
 </script>
 
-<main class="inset h-full">
+<main class="inset h-full bg-$f-primary rounded-3xl">
   <img src={logo} alt="Svelte Logo" class="mx-auto" />
   <h1>Splash screen</h1>
   <FButton on:click={continueClicked}>Continue</FButton>
@@ -22,7 +22,6 @@
   }
 
   main {
-    @apply bg-$f-primary rounded-3xl;
     text-align: center;
     padding: 1em;
     margin: 0 auto;

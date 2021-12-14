@@ -27,4 +27,7 @@ export default defineConfig({
     },
   },
   plugins: [windicss(), svelte(), mpa({ open: false })],
+  optimizeDeps: {
+    include: ['color'],
+  },
 })
