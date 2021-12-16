@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { emit } from '@tauri-apps/api/event'
-import { FButton } from '@gaconkzk/flyui-vue3'
 
 const continueClicked = async (e) => {
   try {
@@ -13,7 +12,7 @@ const continueClicked = async (e) => {
 
 <template>
   <main class="inset h-full bg-$f-primary rounded-3xl">
-    <img src="{logo}" alt="Svelte Logo" class="mx-auto" />
+    <f-icon name="fly_logo" width="120px" height="120px" original />
     <h1>Splash screen</h1>
     <f-button @click="continueClicked">Continue</f-button>
   </main>

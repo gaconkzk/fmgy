@@ -1,10 +1,8 @@
 <script setup lang="ts">
-import { FButton, FIcon, scrollable } from '@gaconkzk/flyui-vue3'
+import TitleBar from '@fmgy/components/TitleBar.vue'
 </script>
-<!-- 
-<TitleBar /> -->
-
 <template>
+  <title-bar />
   <div class="h-full my-30px bg-$f-primary rounded-b-2xl">
     <div>
       <section>
@@ -13,14 +11,14 @@ import { FButton, FIcon, scrollable } from '@gaconkzk/flyui-vue3'
       </section>
       <section>
         <h5>Buttons</h5>
-        <FButton>Primary</FButton>
+        <f-button>Primary</f-button>
       </section>
       <section>
         <h5>Icons</h5>
         <div class="flex flex-row justify-center gap-4">
-          <FIcon name="fly_logo" width="40px" height="40px" original />
-          <FIcon name="s_fly" width="40px" height="40px" original />
-          <FIcon
+          <f-icon name="fly_logo" width="40px" height="40px" original />
+          <f-icon name="s_fly" width="40px" height="40px" original />
+          <f-icon
             name="fly_filled"
             width="40px"
             height="40px"
