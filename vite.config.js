@@ -1,5 +1,5 @@
 import { defineConfig } from 'vite'
-import { svelte } from '@sveltejs/vite-plugin-svelte'
+import vue from '@vitejs/plugin-vue'
 import windicss from 'vite-plugin-windicss'
 
 import mpaModule from 'vite-plugin-mpa'
@@ -26,7 +26,7 @@ export default defineConfig({
       '@fmgy': path.resolve(dirname, './src'),
     },
   },
-  plugins: [windicss(), svelte(), mpa({ open: false })],
+  plugins: [windicss(), vue(), mpa({ open: false })],
   optimizeDeps: {
     include: ['color'],
   },

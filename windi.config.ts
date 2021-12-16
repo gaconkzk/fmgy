@@ -1,6 +1,6 @@
 import { defineConfig } from 'windicss/helpers'
 import formsPlugin from 'windicss/plugin/forms'
-import { theme } from '@gaconkzk/flyui-svelte'
+import { theme } from '@gaconkzk/flyui-vue3/core/utils/theme'
 
 export default defineConfig({
   darkMode: 'class',

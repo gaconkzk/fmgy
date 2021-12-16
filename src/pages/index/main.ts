@@ -1,10 +1,16 @@
 import 'virtual:windi.css'
-import App from '@fmgy/pages/index/App.svelte'
-import '@gaconkzk/flyui-svelte/core/styles/variables.scss'
-import '@gaconkzk/flyui-svelte/core/styles/neumophism.scss'
 
-const app = new App({
-  target: document.getElementById('app'),
-})
+import { createApp } from 'vue'
+
+import App from './App.vue'
+
+import Flyui from '@gaconkzk/flyui-vue3'
+import '@gaconkzk/flyui-vue3/css'
+
+import '@fmgy/styles/index.scss'
+
+const app = createApp(App)
+app.use(Flyui)
+app.mount('#app')
 
 export default app

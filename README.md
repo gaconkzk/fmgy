@@ -4,7 +4,8 @@ An app - web cross (no android, iphone) - practice with new tech that I want to 
 -- for now just for heavy phrase of the app (3rd process call, image processing, editing, ...)
 ## Gun for DB
 -- decentralized DB - p2p - I'm going to learn by doing something on it (storing files, data, state, auth, ...)
-## Svelte for frontend
+## ~~Svelte~~ Vue3 for frontend
+Stop trying using svelte - since I can't make a simple library component for svelte - I'll back to svelte when it more stable for creating library
 -- one of my favorites web library
 
 ### Todo
