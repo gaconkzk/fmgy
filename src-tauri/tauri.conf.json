@@ -66,8 +66,8 @@
       },
       {
         "title": "welcome",
-        "width": 600,
-        "height": 400,
+        "width": 615,
+        "height": 284,
         "resizable": false,
         "url": "/splash",
         "label": "splashscreen",

@@ -3,6 +3,15 @@
     data-tauri-drag-region
     :class="`titlebar ${maximized ? 'maximized' : ''}`"
   >
+    <div class="title flex flex-row gap-x-4 justify-center items-baseline">
+      <div>FMGY</div>
+      <div
+        v-if="!!selected"
+        class="inset-noborder pt-3 pb-2 w-30 rounded-b-lg text-$f-selected"
+      >
+        {{ selected }}
+      </div>
+    </div>
     <div
       class="titlebar-button"
       id="titlebar-minimize"
@@ -37,12 +46,18 @@ const toggleMaximize = async () => {
   await appWindow.toggleMaximize()
   maximized.value = await appWindow.isMaximized()
 }
+const { selected } = defineProps({
+  selected: String,
+})
 </script>
 
 <style lang="scss">
+.title {
+  @apply fixed top-0 left-8 z-1 font-bold;
+}
 .titlebar {
   @apply rounded-t-2xl;
-  height: 30px;
+  height: 44px;
   background: var(--f-primary);
   user-select: none;
   display: flex;

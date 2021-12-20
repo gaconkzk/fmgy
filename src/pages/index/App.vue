@@ -2,16 +2,16 @@
 import TitleBar from '@fmgy/components/TitleBar.vue'
 </script>
 <template>
-  <title-bar />
-  <div class="h-full my-30px bg-$f-primary rounded-b-2xl">
+  <title-bar selected="Manaa" />
+  <div class="h-full mt-44px pb-4 bg-$f-primary rounded-b-2xl">
     <div>
       <section>
         <h5>Theme</h5>
         <f-theme-color />
       </section>
-      <section>
+      <section class="flex flex-col justify-center items-center">
         <h5>Buttons</h5>
-        <f-button>Primary</f-button>
+        <f-button nmType="flat" noborder rounded>Primary</f-button>
       </section>
       <section>
         <h5>Icons</h5>

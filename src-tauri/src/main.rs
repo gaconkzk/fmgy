@@ -12,23 +12,15 @@ struct Payload {
 }
 
 fn main() {
-  // // here `"quit".to_string()` defines the menu item id, and the second parameter is the menu item label.
-  // let quit = CustomMenuItem::new("quit".to_string(), "Quit");
-  // let close = CustomMenuItem::new("close".to_string(), "Close");
-  // let submenu = Submenu::new("File", Menu::new().add_item(quit).add_item(close));
-  // let menu = Menu::new()
-  //   .add_native_item(MenuItem::Copy)
-  //   .add_item(CustomMenuItem::new("hide", "Hide"))
-  //   .add_submenu(submenu);
   tauri::Builder::default()
     // .menu(menu)
     .setup(|app| {
       let splash = app.get_window("splashscreen").unwrap();
       let main_window = app.get_window("main").unwrap();
 
-      let continueClicked = app.listen_global("splash-continue", move |event| {
+      app.listen_global("splash-continue", move |_event| {
         splash.close().unwrap();
-        main_window.show();
+        main_window.show().unwrap();
       });
 
       Ok(())
