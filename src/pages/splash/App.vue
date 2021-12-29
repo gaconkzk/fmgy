@@ -1,13 +1,29 @@
 <script setup lang="ts">
-import { emit } from '@tauri-apps/api/event'
+import { emit, listen } from '@tauri-apps/api/event'
+import { invoke } from '@tauri-apps/api/tauri'
+import { ref, onBeforeMount, onUnmounted } from 'vue'
 
-const continueClicked = async (e) => {
+const continueClicked = async () => {
   try {
-    await emit('splash-continue')
+    console.log('click continue')
+    await invoke('splashscreen_continue')
   } catch (e) {
     console.warn('Seem you not run this on application - ')
   }
 }
+
+const loading = ref(true)
+const unlisten = ref(null)
+
+onBeforeMount(async () => {
+  unlisten.value = await listen('init.done', (e) => {
+    loading.value = false
+  })
+})
+
+onUnmounted(() => {
+  unlisten.value()
+})
 </script>
 
 <template>
@@ -32,6 +48,8 @@ const continueClicked = async (e) => {
       original
     />
     <h1>FMGY</h1>
-    <f-button @click="continueClicked">Continue</f-button>
+    <f-button @click="() => !loading && continueClicked()">{{
+      loading ? 'loading...' : 'Continue'
+    }}</f-button>
   </main>
 </template>
