@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { emit, listen } from '@tauri-apps/api/event'
+import { emit, EventCallback, listen } from '@tauri-apps/api/event'
 import { invoke } from '@tauri-apps/api/tauri'
 import { ref, onBeforeMount, onUnmounted } from 'vue'
 
@@ -13,10 +13,32 @@ const continueClicked = async () => {
 }
 
 const loading = ref(true)
+const settings = ref({})
 const unlisten = ref(null)
 
+interface FmgyInitEvent {
+  payload: FmgyInitMessage
+}
+
+type FmgyInitMessage = {
+  message: string
+  settings: FmgySettings
+}
+
+type FmgySettings = {
+  manga: MangaSettings
+}
+
+type MangaSettings = {
+  path: string
+}
+
 onBeforeMount(async () => {
-  unlisten.value = await listen('init.done', (e) => {
+  const fmgySettingsStr = window.localStorage.getItem('fmgy_settings')
+  const fmgySettings = JSON.parse(fmgySettingsStr) as FmgySettings
+
+  unlisten.value = await listen('init.done', (e: FmgyInitEvent) => {
+    settings.value = Object.assign({}, e.payload.settings, fmgySettings)
     loading.value = false
   })
 })
