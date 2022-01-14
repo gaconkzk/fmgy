@@ -8,9 +8,11 @@ import Flyui from '@gaconkzk/flyui-vue3'
 import '@gaconkzk/flyui-vue3/css'
 
 import '@fmgy/styles/index.scss'
+import { store, key } from '@fmgy/stores/application'
 
 const app = createApp(App)
 app.use(Flyui)
+app.use(store, key)
 app.mount('#app')
 
 export default app

@@ -6,10 +6,10 @@
     <div class="title flex flex-row gap-x-4 justify-center items-baseline">
       <div>FMGY</div>
       <div
-        v-if="!!selected"
-        class="inset-noborder pt-3 pb-2 w-30 rounded-b-lg text-$f-selected"
+        v-if="!!activated"
+        class="inset-noborder pt-3 pb-2 min-w-20 px-3 rounded-b-lg text-$f-selected uppercase"
       >
-        {{ selected }}
+        {{ activated }}
       </div>
     </div>
     <div
@@ -39,8 +39,13 @@
 </template>
 
 <script setup lang="ts">
+import { useStore, getState } from '@fmgy/stores'
 import { appWindow } from '@tauri-apps/api/window'
 import { ref } from 'vue'
+
+const store = useStore()
+const activated = getState<string>('activated', store)
+
 let maximized = ref(false)
 const toggleMaximize = async () => {
   await appWindow.toggleMaximize()

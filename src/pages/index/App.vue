@@ -1,9 +1,11 @@
 <script setup lang="ts">
 import TitleBar from '@fmgy/components/TitleBar.vue'
+import MainMenu from '@fmgy/components/MainMenu.vue'
 </script>
 <template>
   <title-bar selected="Manaa" />
   <div class="h-full mt-44px pb-4 bg-$f-primary rounded-b-2xl">
+    <main-menu class="main-menu" />
     <div>
       <section>
         <h5>Theme</h5>
@@ -67,3 +69,5 @@ import TitleBar from '@fmgy/components/TitleBar.vue'
     </div>
   </div>
 </template>
+
+<style lang="scss" scoped></style>
