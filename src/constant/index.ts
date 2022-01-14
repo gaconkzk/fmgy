@@ -1,3 +1,3 @@
-import menus from './menu'
+import menus, { iconByName } from './menu'
 
-export { menus }
+export { menus, iconByName }

@@ -3,13 +3,16 @@
     data-tauri-drag-region
     :class="`titlebar ${maximized ? 'maximized' : ''}`"
   >
-    <div class="title flex flex-row gap-x-4 justify-center items-baseline">
+    <div class="title flex flex-row gap-x-4 justify-center items-center">
       <div>FMGY</div>
       <div
         v-if="!!activated"
-        class="inset-noborder pt-3 pb-2 min-w-20 px-3 rounded-b-lg text-$f-selected uppercase"
+        class="inset-noborder pt-2 pb-2 min-w-20 px-3 rounded-b-lg text-$f-selected uppercase"
       >
-        {{ activated }}
+        <div class="flex flex-row items-center gap-2 px-2">
+          <component :is="iconByName(activated)" />
+          {{ activated }}
+        </div>
       </div>
     </div>
     <div
@@ -42,6 +45,8 @@
 import { useStore, getState } from '@fmgy/stores'
 import { appWindow } from '@tauri-apps/api/window'
 import { ref } from 'vue'
+
+import { iconByName } from '@fmgy/constant'
 
 const store = useStore()
 const activated = getState<string>('activated', store)

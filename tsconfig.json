@@ -15,7 +15,8 @@
     "checkJs": true,
     "paths": {
       "@fmgy/*": ["./src/*"]
-    }
+    },
+    "types": ["unplugin-icons/types/vue"]
   },
   "exclude": ["node_modules"],
   "include": ["src/**/*.d.ts", "src/**/*.ts", "src/**/*.js", "src/**/*.vue"]

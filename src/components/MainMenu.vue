@@ -33,7 +33,7 @@ const select = (name: string) => {
   .menu {
     ul {
       li {
-        @apply py-2 pr-4 font-sans text-lg;
+        @apply py-2 pr-4 font-sans text-lg font-bold;
         &.actived {
           @apply text-$f-selected underline underline-$f-selected;
         }

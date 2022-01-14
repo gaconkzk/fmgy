@@ -7,10 +7,6 @@ import MainMenu from '@fmgy/components/MainMenu.vue'
   <div class="h-full mt-44px pb-4 bg-$f-primary rounded-b-2xl">
     <main-menu class="main-menu" />
     <div>
-      <section>
-        <h5>Theme</h5>
-        <f-theme-color />
-      </section>
       <section class="flex flex-col justify-center items-center">
         <h5>Buttons</h5>
         <f-button nmType="flat" noborder rounded>Primary</f-button>

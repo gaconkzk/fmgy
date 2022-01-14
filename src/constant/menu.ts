@@ -1,3 +1,15 @@
+import mangaIcon from '~icons/emojione/green-book'
+import typhoonIcon from '~icons/ri/typhoon-line'
+import videoIcon from '~icons/emojione/video-camera'
+
+const menusIcon = {
+  manga: mangaIcon,
+  'code typhoon': typhoonIcon,
+  video: videoIcon,
+}
+
+export const iconByName = (iconName: string) => menusIcon[iconName]
+
 export type Menu = {
   name: string
   path: string
@@ -8,17 +20,14 @@ const menus: Menu[] = [
   {
     name: 'manga',
     path: '/manga',
-    icon: 'mdi-book-open-page-variant',
   },
   {
     name: 'code typhoon',
     path: '/ct',
-    icon: 'mdi-code-braces',
   },
   {
     name: 'video',
     path: '/video',
-    icon: 'mdi-video',
   },
 ]
 
