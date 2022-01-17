@@ -57,7 +57,7 @@
         "width": 1024,
         "height": 720,
         "resizable": true,
-        "url": "/index",
+        "url": "/main",
         "fullscreen": false,
         "visible": false,
         "center": true,

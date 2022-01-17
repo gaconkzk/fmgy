@@ -20,7 +20,7 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
-        main: path.resolve(dirname, 'src/pages/index', 'index.html'),
+        main: path.resolve(dirname, 'src/pages/main', 'index.html'),
         splash: path.resolve(dirname, 'src/pages/splash', 'index.html'),
       },
     },

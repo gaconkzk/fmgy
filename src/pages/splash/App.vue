@@ -1,8 +1,7 @@
 <script setup lang="ts">
-import { emit, EventCallback, listen } from '@tauri-apps/api/event'
+import { listen } from '@tauri-apps/api/event'
 import { invoke } from '@tauri-apps/api/tauri'
-import { onMounted } from 'vue'
-import { ref, onBeforeMount, onUnmounted } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 
 const continueClicked = async () => {
   try {

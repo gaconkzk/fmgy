@@ -2,7 +2,7 @@
   all(not(debug_assertions), target_os = "windows"),
   windows_subsystem = "windows"
 )]
-use tauri::{window, Manager};
+use tauri::{Manager, Window};
 
 use confy;
 
@@ -17,7 +17,7 @@ struct Payload {
 }
 
 #[tauri::command]
-fn splashscreen_continue(window: tauri::Window) {
+fn splashscreen_continue(window: Window) {
   // Close splashscreen
   if let Some(splashscreen) = window.get_window("splashscreen") {
     splashscreen.close().unwrap();
@@ -27,9 +27,7 @@ fn splashscreen_continue(window: tauri::Window) {
 }
 
 #[tauri::command]
-fn splashscreen_ready(window: tauri::Window) {
-  let splash = window.get_window("splashscreen").unwrap();
-
+fn splashscreen_ready(window: Window) {
   // TODO
   // 1 Splash
   // initialize your app here
@@ -40,6 +38,7 @@ fn splashscreen_ready(window: tauri::Window) {
   println!("Settings loaded: {:#?}", settings);
 
   // After it's done, send signal to the splashscreen so that the continue button should be enabled
+  let splash = window.get_window("splashscreen").unwrap();
   splash
     .emit(
       "init.done",

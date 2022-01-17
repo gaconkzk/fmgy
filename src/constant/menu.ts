@@ -19,15 +19,15 @@ export type Menu = {
 const menus: Menu[] = [
   {
     name: 'manga',
-    path: '/manga',
+    path: '/main/manga',
   },
   {
     name: 'video',
-    path: '/video',
+    path: '/main/video',
   },
   {
     name: 'code typhoon',
-    path: '/ct',
+    path: '/main/ct',
   },
 ]
 

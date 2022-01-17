@@ -1,7 +1,7 @@
 lockfileVersion: 5.3
 
 specifiers:
-  '@gaconkzk/flyui-vue3': ^0.2.8
+  '@gaconkzk/flyui-vue3': ^0.2.9
   '@iconify-json/ant-design': ^1.0.2
   '@iconify-json/clarity': ^1.0.1
   '@iconify-json/emojione': ^1.0.2
@@ -23,16 +23,18 @@ specifiers:
   vite-plugin-mpa: ^1.1.1
   vite-plugin-windicss: ^1.6.2
   vue: ^3.2.27
+  vue-router: '4'
   vuex: ^4.0.2
   windicss: ^3.4.2
 
 dependencies:
   '@tauri-apps/api': 1.0.0-beta.8
   vue: 3.2.27
+  vue-router: 4.0.12_vue@3.2.27
   vuex: 4.0.2_vue@3.2.27
 
 devDependencies:
-  '@gaconkzk/flyui-vue3': 0.2.8
+  '@gaconkzk/flyui-vue3': 0.2.9
   '@iconify-json/ant-design': 1.0.2
   '@iconify-json/clarity': 1.0.1
   '@iconify-json/emojione': 1.0.2
@@ -93,8 +95,8 @@ packages:
       to-fast-properties: 2.0.0
     dev: true
 
-  /@gaconkzk/flyui-vue3/0.2.8:
-    resolution: {integrity: sha512-J5aMNfLowaCwiDucpP4EwQ5bXAYDd+J6gxrmK48pFMuFhgiDOGdkh2uPec5OV0N65WPzBcU27xUbkRa50YzIMQ==}
+  /@gaconkzk/flyui-vue3/0.2.9:
+    resolution: {integrity: sha512-SR2fJF6oSOOYc9GOOThitZEXReaf+m823rxcjBn/7/PUeiBy9vJXlbv4g7NCL6NCmiFPfZVkfVUthlWVYFFxkw==}
     dependencies:
       '@windicss/plugin-scrollbar': 1.2.3
       color: 4.2.0
@@ -3913,6 +3915,15 @@ packages:
     resolution: {integrity: sha1-YU9/v42AHwu18GYfWy9XhXUOTwk=}
     engines: {node: '>=0.10.0'}
     dev: true
+
+  /vue-router/4.0.12_vue@3.2.27:
+    resolution: {integrity: sha512-CPXvfqe+mZLB1kBWssssTiWg4EQERyqJZes7USiqfW9B5N2x+nHlnsM1D3b5CaJ6qgCvMmYJnz+G0iWjNCvXrg==}
+    peerDependencies:
+      vue: ^3.0.0
+    dependencies:
+      '@vue/devtools-api': 6.0.0-beta.21.1
+      vue: 3.2.27
+    dev: false
 
   /vue/3.2.27:
     resolution: {integrity: sha512-p1cH8Q6eaPwvANCjFQj497a914cxXKKwOG3Lg9USddTOrn4/zFMKjn9dnovkx+L8VtFaNgbVqW8mLJS/eTA6xw==}

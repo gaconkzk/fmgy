@@ -1,12 +1,17 @@
 <script setup lang="ts">
 import { useStore, getState } from '@fmgy/stores'
 import { menus } from '@fmgy/constant'
+import { useRouter } from 'vue-router'
 
 const store = useStore()
 const activated = getState<string>('activated', store)
 
+const router = useRouter()
+
 const select = (name: string) => {
+  const item = menus.find((item) => item.name === name)
   store.commit('setActived', name)
+  router.push(item.path)
 }
 </script>
 
