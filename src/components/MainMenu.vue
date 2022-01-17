@@ -23,7 +23,7 @@ const select = (name: string) => {
         </li>
       </ul>
     </nav>
-    <f-text-field placeholder="Search" class="search" />
+    <input placeholder="what do you need?" class="inset search" />
   </div>
 </template>
 
@@ -43,5 +43,8 @@ const select = (name: string) => {
       }
     }
   }
+}
+.search {
+  @apply rounded p-2;
 }
 </style>

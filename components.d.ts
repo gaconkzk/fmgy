@@ -4,7 +4,11 @@
 
 declare module 'vue' {
   export interface GlobalComponents {
+    AntDesignLeftOutlined: typeof import('~icons/ant-design/left-outlined')['default']
+    AntDesignRightOutlined: typeof import('~icons/ant-design/right-outlined')['default']
+    AntDesignUpOutlined: typeof import('~icons/ant-design/up-outlined')['default']
     MainMenu: typeof import('./src/components/MainMenu.vue')['default']
+    NavigationBar: typeof import('./src/components/NavigationBar.vue')['default']
     TitleBar: typeof import('./src/components/TitleBar.vue')['default']
   }
 }

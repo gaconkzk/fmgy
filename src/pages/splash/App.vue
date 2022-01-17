@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { emit, EventCallback, listen } from '@tauri-apps/api/event'
 import { invoke } from '@tauri-apps/api/tauri'
+import { onMounted } from 'vue'
 import { ref, onBeforeMount, onUnmounted } from 'vue'
 
 const continueClicked = async () => {
@@ -9,6 +10,15 @@ const continueClicked = async () => {
     await invoke('splashscreen_continue')
   } catch (e) {
     console.warn('Seem you not run this on application - ')
+  }
+}
+
+const splashReady = async () => {
+  try {
+    console.log('splash mounted - ready initializing')
+    await invoke('splashscreen_ready')
+  } catch (e) {
+    console.warn('Seem you not run this on application - ', e)
   }
 }
 
@@ -33,34 +43,27 @@ type MangaSettings = {
   path: string
 }
 
-onBeforeMount(async () => {
+onMounted(() => {
+  loading.value = true
   const fmgySettingsStr = window.localStorage.getItem('fmgy_settings')
   const fmgySettings = JSON.parse(fmgySettingsStr) as FmgySettings
 
-  unlisten.value = await listen('init.done', (e: FmgyInitEvent) => {
+  listen('init.done', (e: FmgyInitEvent) => {
     settings.value = Object.assign({}, e.payload.settings, fmgySettings)
     loading.value = false
-  })
+  }).then((ulf) => (unlisten.value = ulf))
+
+  splashReady()
 })
 
 onUnmounted(() => {
-  unlisten.value()
+  unlisten.value?.()
 })
 </script>
 
 <template>
   <main
-    class="
-      flat
-      h-full
-      bg-$f-primary
-      rounded-3xl
-      m-4
-      pb-4
-      flex-col
-      justify-center
-      items-center
-    "
+    class="flat h-full bg-$f-primary rounded-3xl m-4 pb-4 flex-col justify-center items-center"
   >
     <f-icon
       name="fly_logo"

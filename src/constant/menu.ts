@@ -22,12 +22,12 @@ const menus: Menu[] = [
     path: '/manga',
   },
   {
-    name: 'code typhoon',
-    path: '/ct',
-  },
-  {
     name: 'video',
     path: '/video',
+  },
+  {
+    name: 'code typhoon',
+    path: '/ct',
   },
 ]
 
