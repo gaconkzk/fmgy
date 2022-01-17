@@ -21,9 +21,9 @@ const menusIcon = {
   'Categories/Keywords': categoriesIcon,
 }
 
-export const menuByName = (iconName: string) => menusIcon[iconName]
+export const iconByName = (iconName: string) => menusIcon[iconName]
 
-export const menus = [
+export default [
   {
     name: 'Quick Access',
     path: '/main/manga/quick-access',

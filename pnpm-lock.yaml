@@ -4,7 +4,9 @@ specifiers:
   '@gaconkzk/flyui-vue3': ^0.2.9
   '@iconify-json/ant-design': ^1.0.2
   '@iconify-json/clarity': ^1.0.1
+  '@iconify-json/dashicons': ^1.0.1
   '@iconify-json/emojione': ^1.0.2
+  '@iconify-json/icon-park': ^1.0.2
   '@iconify-json/ri': ^1.0.2
   '@tauri-apps/api': ^1.0.0-beta.8
   '@tauri-apps/cli': ^1.0.0-beta.10
@@ -37,7 +39,9 @@ devDependencies:
   '@gaconkzk/flyui-vue3': 0.2.9
   '@iconify-json/ant-design': 1.0.2
   '@iconify-json/clarity': 1.0.1
+  '@iconify-json/dashicons': 1.0.1
   '@iconify-json/emojione': 1.0.2
+  '@iconify-json/icon-park': 1.0.2
   '@iconify-json/ri': 1.0.2
   '@tauri-apps/cli': 1.0.0-beta.10
   '@tsconfig/svelte': 2.0.1
@@ -116,8 +120,20 @@ packages:
       '@iconify/types': 1.0.12
     dev: true
 
+  /@iconify-json/dashicons/1.0.1:
+    resolution: {integrity: sha512-KplOLauDxGc5ynV7NaaonjN6zMLXqiD02uzZFXUSUxZAjm6AL1w5suJfezgecL6rVMrRpkv/dLN7dFabw7wgXQ==}
+    dependencies:
+      '@iconify/types': 1.0.12
+    dev: true
+
   /@iconify-json/emojione/1.0.2:
     resolution: {integrity: sha512-sgkR2+DXJBt2J5wlmly8UzgGEUryRp9dST6vlXylIV32WALv0Lpa61bjPBFBoq7fw+wLBC4YrjupPFyCzeKrRQ==}
+    dependencies:
+      '@iconify/types': 1.0.12
+    dev: true
+
+  /@iconify-json/icon-park/1.0.2:
+    resolution: {integrity: sha512-grO+u+4fmeryKHsrA8QsUsX32Sazh0lV4vnQDEjeygyZw1SdTQ830W1kLB8OnUpx4UG3KI0vtPkzAvIYTufhZA==}
     dependencies:
       '@iconify/types': 1.0.12
     dev: true
