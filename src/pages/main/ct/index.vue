@@ -1,3 +1,3 @@
 <template>
-  <div>code typhoon</div>
+  <div class="w-full">code typhoon</div>
 </template>

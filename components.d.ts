@@ -9,7 +9,7 @@ declare module 'vue' {
     AntDesignUpOutlined: typeof import('~icons/ant-design/up-outlined')['default']
     MainMenu: typeof import('./src/components/MainMenu.vue')['default']
     NavigationBar: typeof import('./src/components/NavigationBar.vue')['default']
-    SideBar: typeof import('./src/components/SideBar/index.vue')['default']
+    SideBar: typeof import('./src/components/SideBar.vue')['default']
     TitleBar: typeof import('./src/components/TitleBar.vue')['default']
   }
 }

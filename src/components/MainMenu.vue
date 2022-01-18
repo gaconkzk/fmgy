@@ -1,16 +1,22 @@
 <script setup lang="ts">
-import { useStore, getState } from '@fmgy/stores'
 import { menus } from '@fmgy/constant'
-import { useRouter } from 'vue-router'
-
-const store = useStore()
-const activated = getState<string>('activated', store)
+import { useRoute, useRouter } from 'vue-router'
+import { ref, watch } from 'vue'
 
 const router = useRouter()
+const route = useRoute()
+
+const currentPage = ref('')
+watch(
+  () => route.path,
+  (path) => {
+    const page = path.split('/')?.[2] ?? ''
+    currentPage.value = `/main/${page}`
+  }
+)
 
 const select = (name: string) => {
   const item = menus.find((item) => item.name === name)
-  store.commit('setActived', name)
   router.push(item.path)
 }
 </script>
@@ -21,7 +27,7 @@ const select = (name: string) => {
       <ul class="flex flex-row justify-start uppercase">
         <li
           v-for="item in menus"
-          v-bind:class="activated === item.name ? 'actived' : ''"
+          v-bind:class="currentPage === item.path ? 'actived' : ''"
           @click="select(item.name)"
         >
           {{ item.name }}

@@ -8,6 +8,9 @@ import NavigationBar from '@fmgy/components/NavigationBar.vue'
   <div class="h-full mt-44px pb-4 bg-$f-primary rounded-b-2xl">
     <main-menu />
     <navigation-bar />
-    <router-view />
+    <div class="flex w-screen p-0 m-0 ml-4 flex-row items-start gap-col-2">
+      <side-bar />
+      <router-view />
+    </div>
   </div>
 </template>

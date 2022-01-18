@@ -16,7 +16,7 @@
     "paths": {
       "@fmgy/*": ["./src/*"]
     },
-    "types": ["unplugin-icons/types/vue"]
+    "types": ["unplugin-icons/types/vue", "vue"]
   },
   "exclude": ["node_modules"],
   "include": ["src/**/*.d.ts", "src/**/*.ts", "src/**/*.js", "src/**/*.vue"]
