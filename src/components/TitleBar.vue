@@ -6,12 +6,12 @@
     <div class="title flex flex-row gap-x-4 justify-center items-center">
       <div>FMGY</div>
       <div
-        v-if="!!activated"
+        v-if="!!activated?.[page]"
         class="inset-noborder pt-2 pb-2 min-w-20 px-3 rounded-b-lg text-$f-selected uppercase"
       >
         <div class="flex flex-row items-center gap-2 px-2">
-          <component :is="iconByName(activated)" />
-          {{ activated }}
+          <component :is="iconByMenu(activated[page])" />
+          {{ activated[page].name }}
         </div>
       </div>
     </div>
@@ -44,12 +44,18 @@
 <script setup lang="ts">
 import { useStore, getState } from '@fmgy/stores'
 import { appWindow } from '@tauri-apps/api/window'
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
 
-import { iconByName } from '@fmgy/constant'
+import { iconByMenu, pageByPath } from '@fmgy/constant'
+import { Menu } from '@fmgy/constant/menu'
+import { useRoute } from 'vue-router'
 
 const store = useStore()
-const activated = getState<string>('activated', store)
+const activated = getState<Menu>('activated', store)
+
+const route = useRoute()
+
+const page = computed(() => pageByPath(route.path))
 
 let maximized = ref(false)
 const toggleMaximize = async () => {

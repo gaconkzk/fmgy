@@ -4,6 +4,7 @@ import {
   mangaIconByName,
   videoIconByName,
   videoMenus,
+  pageByPath,
 } from '@fmgy/constant'
 import { ref, watch } from 'vue'
 import { useStore, getState } from '@fmgy/stores'
@@ -11,7 +12,7 @@ import { Menu } from '@fmgy/constant/menu'
 import { useRoute } from 'vue-router'
 
 const store = useStore()
-const activated = getState<string>('activated', store)
+const activated = getState<Menu>('activated', store)
 
 const route = useRoute()
 
@@ -22,15 +23,15 @@ watch(
   () => route.path,
   (path) => {
     // get second part from path
-    const currentPage = path.split('/')?.[2]
+    const currentPage = pageByPath(path)
     switch (currentPage) {
-      case 'video':
+      case '/main/video':
         {
           menus.value = videoMenus
           iconsFunc.value = videoIconByName
         }
         break
-      case 'manga':
+      case '/main/manga':
         {
           menus.value = mangaMenus
           iconsFunc.value = mangaIconByName
@@ -44,7 +45,7 @@ watch(
 )
 
 const select = (item: Menu) => {
-  store.commit('setActived', item.name)
+  store.commit('setActived', item)
 }
 </script>
 
@@ -52,7 +53,9 @@ const select = (item: Menu) => {
   <ul class="flex flex-col items-start min-w-40 max-w-40">
     <li
       v-for="item in menus"
-      :class="`item ${activated === item.name ? 'actived' : ''}`"
+      :class="`item ${
+        activated?.[pageByPath(item.path)]?.path === item.path ? 'actived' : ''
+      }`"
       hover="underline underline-blue-500"
       @click="() => select(item)"
     >

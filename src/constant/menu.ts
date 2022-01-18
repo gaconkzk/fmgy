@@ -2,7 +2,7 @@ import mangaIcon from '~icons/emojione/green-book'
 import typhoonIcon from '~icons/ri/typhoon-line'
 import videoIcon from '~icons/emojione/video-camera'
 
-const menusIcon = {
+export const menusIcon = {
   manga: mangaIcon,
   'code typhoon': typhoonIcon,
   video: videoIcon,
