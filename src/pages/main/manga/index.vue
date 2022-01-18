@@ -2,5 +2,5 @@
 import Sidebar from '@fmgy/components/sidebar/index.vue'
 </script>
 <template>
-  <div class="w-full">manga</div>
+  <div class="w-full h-full">manga</div>
 </template>

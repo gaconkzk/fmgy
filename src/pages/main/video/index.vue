@@ -1,3 +1,3 @@
 <template>
-  <div class="w-full">video</div>
+  <div class="w-full h-full">video</div>
 </template>
