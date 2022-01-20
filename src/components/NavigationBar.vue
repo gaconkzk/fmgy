@@ -3,7 +3,9 @@
     <ant-design-left-outlined />
     <ant-design-right-outlined />
     <ant-design-up-outlined />
-    <span class="text-xl ml-2 font-bold">{{ activated?.[page]?.name }}</span>
+    <span v-if="!!activated?.[page]" class="text-xl ml-2 font-bold">{{
+      activated[page].name
+    }}</span>
   </div>
 </template>
 
