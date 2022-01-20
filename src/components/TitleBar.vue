@@ -4,7 +4,7 @@
     :class="`titlebar ${maximized ? 'maximized' : ''}`"
   >
     <div class="title flex flex-row gap-x-4 justify-center items-center">
-      <div>FMGY</div>
+      <div class="min-h-40px flex items-center">FMGY</div>
       <div
         v-if="!!activated?.[page]"
         class="inset-noborder pt-2 pb-2 min-w-20 px-3 rounded-b-lg text-$f-selected uppercase"
