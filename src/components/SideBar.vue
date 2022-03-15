@@ -7,9 +7,10 @@ import {
   pageByPath,
 } from '@fmgy/constant'
 import { ref, watch } from 'vue'
+import { useRoute } from 'vue-router'
 import { useStore, getState } from '@fmgy/stores'
 import { Menu } from '@fmgy/constant/menu'
-import { useRoute } from 'vue-router'
+import Tree from './Tree/index.vue'
 
 const store = useStore()
 const activated = getState<Menu>('activated', store)
@@ -18,6 +19,13 @@ const route = useRoute()
 
 const menus = ref(mangaMenus)
 const iconsFunc = ref<(n: string) => void>(mangaIconByName)
+
+watch(
+  () => activated.value[pageByPath(route.path)],
+  (value) => {
+    console.log('active', value)
+  }
+)
 
 watch(
   () => route.path,
@@ -50,19 +58,7 @@ const select = (item: Menu) => {
 </script>
 
 <template>
-  <ul class="flex flex-col items-start min-w-40 max-w-40">
-    <li
-      v-for="item in menus"
-      :class="`item ${
-        activated?.[pageByPath(item.path)]?.path === item.path ? 'actived' : ''
-      }`"
-      hover="underline underline-blue-500"
-      @click="() => select(item)"
-    >
-      <component :is="iconsFunc(item.name)" class="mx-2" />
-      <span>{{ item.name }}</span>
-    </li>
-  </ul>
+  <tree :items="menus" :icons-func="iconsFunc" />
 </template>
 
 <style lang="scss">

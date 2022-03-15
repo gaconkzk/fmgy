@@ -18,6 +18,10 @@ const routes: RouteRecordRaw[] = [
     component: Manga,
   },
   {
+    path: '/main/manga/categories/:category',
+    component: Manga,
+  },
+  {
     path: '/main/video',
     component: Video,
   },

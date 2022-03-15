@@ -2,6 +2,7 @@ import quickAccessIcon from '~icons/ant-design/star-filled'
 import mineIcon from '~icons/icon-park/me'
 import groupsIcon from '~icons/dashicons/groups'
 import categoriesIcon from '~icons/carbon/categories'
+import { Menu } from './menu'
 
 // <!-- quick access - recent opened/marked -->
 // - 5-10-15 - maximumed configured - default 5 book that we mark/reading
@@ -23,7 +24,7 @@ const menusIcon = {
 
 export const iconByName = (iconName: string) => menusIcon[iconName]
 
-export default [
+const menus: Menu[] = [
   {
     name: 'Quick Access',
     path: '/main/manga/quick-access',
@@ -39,5 +40,13 @@ export default [
   {
     name: 'Categories/Keywords',
     path: '/main/manga/categories',
+    children: [
+      {
+        name: 'Action',
+        path: '/main/manga/categories/action',
+      },
+    ],
   },
 ]
+
+export default menus

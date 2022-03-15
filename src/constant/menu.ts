@@ -14,6 +14,7 @@ export type Menu = {
   name: string
   path: string
   icon?: string
+  children?: Menu[]
 }
 
 const menus: Menu[] = [

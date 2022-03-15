@@ -12,6 +12,7 @@ declare module 'vue' {
     NotImplemented: typeof import('./src/components/NotImplemented.vue')['default']
     SideBar: typeof import('./src/components/SideBar.vue')['default']
     TitleBar: typeof import('./src/components/TitleBar.vue')['default']
+    Tree: typeof import('./src/components/Tree/index.vue')['default']
   }
 }
 
