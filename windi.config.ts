@@ -1,6 +1,6 @@
 import { defineConfig } from 'windicss/helpers'
 import formsPlugin from 'windicss/plugin/forms'
-import { theme } from '@gaconkzk/flyui-vue3/core/utils/theme'
+// import { theme } from '@gaconkzk/flyui-vue3/core/utils/theme'
 
 export default defineConfig({
   darkMode: 'class',
@@ -8,7 +8,7 @@ export default defineConfig({
   transformCSS: 'pre',
   safelist: 'p-3 p-4 p-5',
   theme: {
-    extend: theme,
+    // extend: theme,
   },
   plugins: [formsPlugin],
 })

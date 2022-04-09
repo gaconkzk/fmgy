@@ -41,7 +41,7 @@ fn splashscreen_ready(window: Window) {
   let splash = window.get_window("splashscreen").unwrap();
   splash
     .emit(
-      "init.done",
+      "init_done",
       Payload {
         message: "ok, now can process to continue".into(),
         settings: settings,

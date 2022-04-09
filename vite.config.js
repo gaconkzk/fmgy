@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-import windicss from 'vite-plugin-windicss'
+// import windicss from 'vite-plugin-windicss'
+import unocss from 'unocss/vite'
 
 import mpaModule from 'vite-plugin-mpa'
 const mpa = mpaModule.default
@@ -31,7 +32,8 @@ export default defineConfig({
     },
   },
   plugins: [
-    windicss(),
+    // windicss(),
+    unocss({}),
     vue(),
     Components({
       dts: true,
