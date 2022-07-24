@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import unocss from 'unocss/vite'
+import transformerDirective from '@unocss/transformer-directives'
 
 import mpaModule from 'vite-plugin-mpa'
 const mpa = mpaModule.default
@@ -31,8 +32,15 @@ export default defineConfig({
     },
   },
   plugins: [
-    // windicss(),
-    unocss({}),
+    unocss({
+      transformers: [transformerDirective()],
+      theme: {
+        colors: {
+          '$t-primary': '#00a0e9',
+          '$f-primary': '#223344',
+        },
+      },
+    }),
     vue(),
     Components({
       dts: true,

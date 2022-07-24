@@ -23,6 +23,7 @@
     "@tauri-apps/cli": "^1.0.3",
     "@tsconfig/svelte": "^2.0.1",
     "@unocss/preset-wind": "^0.30.13",
+    "@unocss/reset": "^0.44.7",
     "@unocss/transformer-directives": "^0.30.13",
     "@vitejs/plugin-vue": "^3.0.0",
     "@vue/compiler-sfc": "^3.2.37",
@@ -34,7 +35,7 @@
     "typescript": "^4.7.4",
     "unocss": "^0.30.13",
     "unplugin-icons": "^0.14.7",
-    "unplugin-vue-components": "^0.17.21",
+    "unplugin-vue-components": "^v0.21.1",
     "vite": "^3.0.0",
     "vite-plugin-mpa": "^1.1.3"
   },

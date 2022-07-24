@@ -6,10 +6,10 @@
 }
 
 html {
-  @apply text-$t-primary text-base;
+  @apply text-gray-900 text-base;
 }
 body {
-  @apply bg-$f-primary;
+  @apply bg-gray-100;
   position: relative;
 }
 
