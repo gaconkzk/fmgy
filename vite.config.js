@@ -34,12 +34,6 @@ export default defineConfig({
   plugins: [
     unocss({
       transformers: [transformerDirectives()],
-      theme: {
-        colors: {
-          '$t-primary': '#00a0e9',
-          '$f-primary': '#223344',
-        },
-      },
     }),
     vue(),
     Components({
@@ -59,4 +53,11 @@ export default defineConfig({
   optimizeDeps: {
     include: ['color'],
   },
+  // css: {
+  //   preprocessorOptions: {
+  //     scss: {
+  //       additionalData: `@use "@fmgy/styles/_variables.scss" as *;`,
+  //     },
+  //   },
+  // },
 })

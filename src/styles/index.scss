@@ -1,5 +1,11 @@
 @import './variables';
 
+:root {
+  --f-selected: #{$f-selected};
+  --f-primary: #{$f-primary};
+  --t-primary: #{$t-primary};
+}
+
 // No annoying blue rectangles when click element - I'll do when i need
 * {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
